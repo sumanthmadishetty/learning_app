@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NewQuote from './New-Quote';
 import TweetQuote from './Tweet-Quote';
-import { Card, CardText, CardBody, Row, Col } from 'reactstrap';
+import { Card } from 'reactstrap';
 
 var styles = { paddingTop: '18%' };
 
@@ -63,37 +63,38 @@ class Quotes extends Component {
 		return (
 			<div style={{ backgroundColor: this.state.bgColor, height: '-webkit-fill-available' }}>
 				<div className="container" style={styles}>
-					<Col className="col-sm-6 offset-sm-3">
-						<Card outline color="light">
-							<CardBody>
-								<CardText>
-									<Row className="row">
-										<Col className="col-sm-1">
+
+					<div className="col-sm-6 offset-sm-3">
+						<Card outline color="light" style={{ width: ' 30rem' }}>
+							<div className="card-body">
+								<div className="card-text">
+									<div className="row">
+										<div className="col-sm-1">
 											<i className="fa fa-quote-left " aria-hidden="true" style={{ color: this.state.bgColor }}></i>
-										</Col>
-										<Col className="col-sm">
+										</div>
+										<div className="col-sm">
 											<h5 className="text-center" style={{ color: this.state.bgColor }}>{this.state.quote}</h5>
-										</Col>
-									</Row>
-									<Row className="row">
-										<Col className="col-sm-6">
-										</Col>
-										<Col className="col-sm-4 offset-sm-3 mt-3 ml-5">
+										</div>
+									</div>
+									<div className="row">
+										<div className="col-sm-6">
+										</div>
+										<div className="col-sm-4 offset-sm-3 mt-3 ml-5">
 											<h5 className="text-center" style={{ color: this.state.bgColor }}>-{this.state.author}</h5>
-										</Col>
-									</Row>
-									<Row className="row  mt-5">
-										<Col className="col-sm-4 offset-sm-1">
+										</div>
+									</div>
+									<div className="row  mt-5">
+										<div className="col-sm-4 offset-sm-1">
 											<TweetQuote colorData={this.colorsData} bgColor={this.state.bgColor} quote={this.state.quote} author={this.state.author} />
-										</Col>
-										<Col className="col-sm-4  offset-sm-1">
+										</div>
+										<div className="col-sm-4  offset-sm-1">
 											<NewQuote quotesDataInfo={this.quotesDataInfo} colorData={this.colorsData} bgColor={this.state.bgColor} />
-										</Col>
-									</Row>
-								</CardText>
-							</CardBody>
+										</div>
+									</div>
+								</div>
+							</div>
 						</Card>
-					</Col>
+					</div>
 				</div >
 			</div >
 		)
