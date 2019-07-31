@@ -9,7 +9,7 @@ class Quotes extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			jsonQuotesData: [], author: '', quote: '', quotesDataLength: [], count: 0, bgColor: '#FF8800'
+			jsonQuotesData: [], author: '', quote: '', quotesDataLength: [], count: 0, bgColor: '#f99192'
 		}
 	}
 
@@ -63,7 +63,6 @@ class Quotes extends Component {
 		return (
 			<div style={{ backgroundColor: this.state.bgColor, height: '-webkit-fill-available' }}>
 				<div className="container" style={styles}>
-
 					<div className="col-sm-6 offset-sm-3">
 						<Card outline color="light" style={{ width: ' 30rem' }}>
 							<div className="card-body">
@@ -96,14 +95,16 @@ class Quotes extends Component {
 						</Card>
 					</div>
 				</div >
+				{/* <button onClick={() => { navigate('/Calculator', { state: {} }) }} >Calculator</button> */}
 			</div >
 		)
 	}
 
 	render() {
+		debugger
 		return (
 			this.Quotes()
-		);
+		)
 	}
 }
 
