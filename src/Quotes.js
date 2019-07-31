@@ -101,7 +101,6 @@ class Quotes extends Component {
 	}
 
 	render() {
-		debugger
 		return (
 			this.Quotes()
 		)
