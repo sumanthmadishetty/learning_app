@@ -43,13 +43,6 @@ class Keypad extends Component {
     });
   }
 
-  // row1Data() {
-  //   return (
-  //     row1.map(({ name }, i) => {
-  //         <td ><button style={styles} className="btn btn-dark btn-lg" name={name} onClick={this.submitData}>{name}</button> </td >
-  //       )
-  //     }))
-  // }
   rowData(row) {
     return row.map(({ name }, i) => <td ><button style={styles} className="btn btn-dark btn-lg" name={name} onClick={this.submitData}>{name}</button> </td >
     )

@@ -95,7 +95,6 @@ class Quotes extends Component {
 						</Card>
 					</div>
 				</div >
-				{/* <button onClick={() => { navigate('/Calculator', { state: {} }) }} >Calculator</button> */}
 			</div >
 		)
 	}
