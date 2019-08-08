@@ -9,9 +9,7 @@ export default class News extends Component {
 
   componentDidMount() {
     jsonNewsData().then(jsonNewsData => {
-      console.log('jsonNewsData', jsonNewsData)
       let requests = jsonNewsData.map(id => fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
-      debugger
       Promise.all(requests)
         .then(responses => Promise.all(responses.map(r => r.json())))
         .then(response => {
@@ -31,7 +29,6 @@ export default class News extends Component {
     this.setState({
       searchingData: searchData,
     })
-    console.log(searchData)
   }
 
   searchInfo() {
@@ -53,10 +50,8 @@ export default class News extends Component {
   }
 
   newsInfo() {
-    console.log("final1", this.state.searchingData)
     return (
       this.state.searchingData.map((id, i) => {
-        console.log("final2", id)
         return (
           <div key={i}>
             <div>{i + 1}.&nbsp;&nbsp;<a href={id.url} target="blanck">{id.title}</a></div>

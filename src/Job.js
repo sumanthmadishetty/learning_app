@@ -9,8 +9,6 @@ export default class Job extends Component {
     fetch(' https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty')
       .then(response => response.json())
       .then(jsonJobData => {
-
-        console.log('jsonJobData', jsonJobData)
         let requests = jsonJobData.map(id => fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
         Promise.all(requests)
           .then(responses => Promise.all(responses.map(r => r.json())))
@@ -20,25 +18,7 @@ export default class Job extends Component {
             })
           });
       })
-
   }
-
-  // jsonIdData = () => {
-  //   let data = []
-  //   this.state.jsonJobData.map((id, i) => {
-  //     return (
-  //       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
-  //         .then(response => response.json())
-  //         .then(jsonIdData => {
-  //           data.push(jsonIdData)
-  //         })
-  //         .catch(error => console.log(error))
-  //     )
-  //   })
-  //   this.setState({
-  //     data: data, searchingData: data
-  //   })
-  // }
 
   searchData(event) {
     this.setState({ value: event.target.value });
