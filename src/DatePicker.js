@@ -7,9 +7,7 @@ import getDay from "date-fns/getDay";
 import "react-datepicker/dist/react-datepicker.css";
 require('react-datepicker/dist/react-datepicker.css');
 var disabledDays = ["2019-07-28", "2019-08-01", "2019-08-02", "2019-08-7", "2019-08-12", "2019-08-15", "2019-08-30"];
-var highlightDays = ["2019-07-29", "2019-08-02", "2019-08-17", "2019-08-13"]
 class datePicker extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +40,7 @@ class datePicker extends Component {
     c.setDate(d.getDate() + 2)
     d.setDate(d.getDate() + 3)
     return (
-      <DatePicker selected={this.state.startDate} onChange={this.handleChange} onSelect={this.handleSelect} filterDate={this.disableDates} highlightDates={[a, b, c, d]} />);
+      <DatePicker selected={this.state.startDate} onChange={this.handleChange} onSelect={this.handleSelect} filterDate={this.disableDates} highlightDates={[{ high1: [a] }, { high2: [b] }, { high1: [c] }, { high2: [d] }]} />);
   }
 }
 export default datePicker

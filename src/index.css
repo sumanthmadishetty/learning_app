@@ -6,3 +6,19 @@ body {
 .react-datepicker__day--highlighted {
   background-color: red ! important ;
 }
+.high1 {
+    background-color: green;
+}
+
+.high2 {
+   background-color: red;
+}
+.disable {
+  background-color: #666666;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.979);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;  
+}
