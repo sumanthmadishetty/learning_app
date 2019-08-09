@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
+var style = {
+  paddingTop: '25%'
+}
 export default class Job extends Component {
   constructor(props) {
     super(props);
-    this.state = { jsonJobData: [], jsonIdData: '', data: [], searchingData: [] }
+    this.state = { jsonJobData: [], jsonIdData: '', data: [], searchingData: [], loading: true }
     this.searchData = this.searchData.bind(this);
   }
+
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loading: false })
+    }, 2000)
     fetch(' https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty')
       .then(response => response.json())
       .then(jsonJobData => {
@@ -14,7 +22,9 @@ export default class Job extends Component {
           .then(responses => Promise.all(responses.map(r => r.json())))
           .then(response => {
             this.setState({
-              response: response, searchingData: response
+              response: response, searchingData: response, loading: false
+            }, () => {
+              alert(" ")
             })
           });
       })
@@ -60,10 +70,25 @@ export default class Job extends Component {
     )
   }
   render() {
+
+    let content = this.state.loading ?
+      <div style={style} className="col-sm  offset-sm-6">
+        <ClipLoader>
+          size={60}
+          color={'#FF0000'}
+          loading={this.state.loading}
+        </ClipLoader> </div> : <div> {this.searchInfo()} {this.newsInfo()}</div>
+
     return (
       <div>
+        {content}
+        {/* <ClipLoader
+          size={60}
+          color={'#123abc'}
+          loading={this.state.loading}
+        />
         {this.searchInfo()}
-        {this.newsInfo()}
+        {this.newsInfo()} */}
       </div>
     )
   }

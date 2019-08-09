@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
+var style = {
+  paddingTop: '25%'
+}
 import { jsonNewsData } from './http.js';
 export default class News extends Component {
   constructor(props) {
     super(props);
-    this.state = { jsonNewsData: [], data: [], idData: [], value: '', searchingData: [] }
+    this.state = { jsonNewsData: [], data: [], idData: [], value: '', searchingData: [], loading: true }
     this.searchData = this.searchData.bind(this);
   }
 
   componentDidMount() {
+
     jsonNewsData().then(jsonNewsData => {
       let requests = jsonNewsData.map(id => fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
       Promise.all(requests)
         .then(responses => Promise.all(responses.map(r => r.json())))
         .then(response => {
+
           this.setState({
-            response: response, searchingData: response
+            response: response, searchingData: response, loading: false
+          }, () => {
+            alert(" ")
           })
         });
     })
@@ -63,10 +71,16 @@ export default class News extends Component {
   }
 
   render() {
+    let content = this.state.loading ?
+      <div style={style} className="col-sm  offset-sm-6">
+        <ClipLoader>
+          size={60}
+          color="#663399"
+          loading={this.state.loading}
+        </ClipLoader> </div> : <div> {this.searchInfo()} {this.newsInfo()}</div>
     return (
       <div>
-        {this.searchInfo()}
-        {this.newsInfo()}
+        {content}
       </div>
     )
   }

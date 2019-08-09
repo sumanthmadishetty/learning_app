@@ -3,67 +3,49 @@ import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import News from './News.js';
 import Job from './Job.js';
 import './index.css';
-var gridContainer = {
-  display: 'grid', gridGap: '10px', gridTemplateColumns: 'auto auto', textAlign: 'center', backgroundColor: 'slategrey', padding: '10px', height: '60px', border: '2px solid black '
-}
 var item1 = {
   gridRow: '1 / span 2'
 }
 export default class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { bgColor1: 'slategrey', bgColor2: 'slategrey' }
+  }
+  newsBgColor() {
+    this.setState({
+      bgColor1: 'darkcyan'
+    })
+  }
+  jobBgColor() {
+    this.setState({
+      bgColor2: 'cornflowerblue'
+    })
+  }
   render() {
     return (
       <div style={{ backgroundColor: 'linen', height: '1000px' }}>
-        <div className="row">
-          <div className="col-sm-10 offset-sm-1">
-            <Router>
-              <div style={gridContainer} className="col">
-                <Link to="/News"><div style={item1} className="text-light"> News </div></Link>
-                <Link to="/Job"><div style={item1} className="text-light">Job</div></Link>
-              </div>
-
+        <Router>
+          <div className="row">
+            <div className="col-sm-1"></div>
+            <div className="col-sm-5" style={{ display: 'grid', gridTemplateColumns: 'auto auto', textAlign: 'center', backgroundColor: this.state.bgColor1, padding: '10px', height: '60px', border: '2px solid black ' }} >
+              <Link to="/News" onClick={() => { this.newsBgColor() }}><div style={item1} className="text-light"> News </div></Link>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', textAlign: 'center', backgroundColor: this.state.bgColor2, padding: '10px', height: '60px', border: '2px solid black ' }} className="col-sm-5" >
+              <Link to="/Job" onClick={() => { this.jobBgColor() }}><div style={item1} className="text-light">Job</div></Link>
+            </div>
+            <div className="col-sm-1"></div>
+          </div>
+          <div className="row">
+            <div className="col-sm-10 offset-sm-1">
               <Switch>
                 <News path="/News" />
                 <Job path="/Job" />
               </Switch>
-            </Router>
-          </div >
-        </div>
-      </div>
+            </div>
+          </div>
+        </Router>
+      </div >
     )
   }
-}// import React, { Component } from 'react';
-// import News from './News.js';
-// import Job from './Job.js';
-// import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
-// import './index.css';
-// var gridContainer = {
-//   display: 'grid', gridGap: '10px', gridTemplateColumns: 'auto auto', textAlign: 'center', backgroundColor: 'slategrey', padding: '10px', height: '60px', border: '2px solid black '
-// }
-// var item1 = {
-//   gridRow: '1 / span 2'
-// }
-// export default class Main extends Component {
 
-//   render() {
-//     return (
-//       <div style={{ backgroundColor: 'linen', height: '1000px' }}>
-//         <div className="row">
-//           <div className="col-sm-10 offset-sm-1">
-//             <div style={gridContainer} className="col">
-//               <Router>
-//                 <Link to="/News"><div style={item1} className="text-light"> News </div></Link>
-//                 <Link to="/Job"><div style={item1} className="text-light">Job</div></Link>
-//                 <Switch>
-//                   <Route exact path="/News" component={News} />
-//                   <Route exact path="/Job" component={Job} />
-//                 </Switch>
-//               </Router>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-
-//     )
-//   }
-// }
+} 
