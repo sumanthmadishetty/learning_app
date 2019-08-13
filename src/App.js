@@ -1,10 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import './App.css';
-// import Quotes from './Quotes';
-// import Calculator from './Calculator.js';
-// import DatePicker from './DatePicker.js';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
-
 const Main = lazy(() => import('./Main.js'))
 const Calculator = lazy(() => import('./Calculator.js'))
 const Quotes = lazy(() => import('./Quotes.js'))
