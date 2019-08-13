@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
-var style = {
-  paddingTop: '25%'
-}
 import { jsonNewsData } from './http.js';
+  var style = {
+    paddingTop: '25%'
+  }
 export default class News extends Component {
   constructor(props) {
     super(props);

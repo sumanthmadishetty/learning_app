@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import News from './News.js';
 import Job from './Job.js';
 import './index.css';

@@ -1,7 +1,7 @@
 import DatePicker from "react-datepicker";
 import React, { Component } from 'react';
 import './index.css';
-import getDay from "date-fns/getDay";
+// import getDay from "date-fns/getDay";
 // import addDays from "date-fns/addDays";
 // import subDays from "date-fns/subDays";
 import "react-datepicker/dist/react-datepicker.css";
