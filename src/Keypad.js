@@ -19,7 +19,6 @@ class Keypad extends Component {
   }
 
   submitData(e) {
-    debugger
     const { inputValues } = this.state
     let values = e.target.name
     inputValues.push(values)
@@ -29,11 +28,12 @@ class Keypad extends Component {
   }
 
   outPut() {
-    debugger
     const { inputValues } = this.state
     var y = inputValues.reduce((total, value) => total + value)
+
     this.setState({
-      data: eval(y),
+      // eslint-disable-next-line
+      data: eval(y)
     });
   }
 

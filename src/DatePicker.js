@@ -40,7 +40,11 @@ class datePicker extends Component {
     c.setDate(d.getDate() + 2)
     d.setDate(d.getDate() + 3)
     return (
-      <DatePicker selected={this.state.startDate} onChange={this.handleChange} onSelect={this.handleSelect} filterDate={this.disableDates} highlightDates={[{ high1: [a] }, { high2: [b] }, { high1: [c] }, { high2: [d] }]} />);
+      <div>
+        <br />
+        <DatePicker selected={this.state.startDate} onChange={this.handleChange} onSelect={this.handleSelect} filterDate={this.disableDates} highlightDates={[{ high1: [a] }, { high2: [b] }, { high1: [c] }, { high2: [d] }]} />
+      </div>
+    );
   }
 }
 export default datePicker
