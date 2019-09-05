@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Result from './Result';
+import Result from '../Calculator/Result';
 
 var styles = { width: '78px', height: '60px', fontSize: '30px' };
 var equallto = { height: '60px', width: '160px' }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, BrowserRouter as Router, Switch } from 'react-router-dom'
-import News from './News.js';
-import Job from './Job.js';
-import './index.css';
+import News from '../HackerNews/News.js';
+import Job from '../HackerNews/Job.js';
+import '../HackerNews/index.css';
 var item1 = {
   gridRow: '1 / span 2'
 }

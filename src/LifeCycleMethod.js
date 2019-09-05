@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+// import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 // import { Router, navigate, __esModule } from "@reach/router";
-import Main from './Main';
+// import Main from './Main';
 class LifeCycleMethod extends Component {
   constructor(props) {
     super(props);
@@ -69,13 +69,13 @@ class LifeCycleMethod extends Component {
       return (
         <div>{this.state.names},{this.state.author}
           <br />
-          <nav> <Router>
+          {/* <nav> <Router>
             <Link to="/Main"><button onClick={() => this.closeMenu()}>UnMount</button></Link>
             <Switch>
               <Route exact path="/Main" component={Main} />
             </Switch>
           </Router>
-          </nav>
+          </nav> */}
           {/* <button onClick={() => { navigate('/Quotes', { state: {} }) }}>UnMount</button> */}
         </div>
       )

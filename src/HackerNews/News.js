@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
-import { jsonNewsData } from './http.js';
-  var style = {
-    paddingTop: '25%'
-  }
+import { jsonNewsData } from '../HackerNews/http.js';
+var style = {
+  paddingTop: '25%'
+}
 export default class News extends Component {
   constructor(props) {
     super(props);
@@ -12,13 +12,11 @@ export default class News extends Component {
   }
 
   componentDidMount() {
-
     jsonNewsData().then(jsonNewsData => {
       let requests = jsonNewsData.map(id => fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`));
       Promise.all(requests)
         .then(responses => Promise.all(responses.map(r => r.json())))
         .then(response => {
-
           this.setState({
             response: response, searchingData: response, loading: false
           }, () => {
