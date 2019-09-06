@@ -7,7 +7,7 @@ class DatePickerInput extends Component {
     const dates = this.date.value;
     this.props.dispatch({
       type: 'DATE',
-      date: dates
+      dates: dates
     })
 
     this.date.value = '';
@@ -18,7 +18,7 @@ class DatePickerInput extends Component {
         <h2>Form</h2>
         <form>
           <input required type="text" ref={(input) => this.date = input} /><br /><br />
-          <button onClick={(e) => this.SubmitData(e)} className="btn btn-primary" ref={(input) => this.resetdate = input}>Submit</button>
+          <button onClick={(e) => this.SubmitData(e)} className="btn btn-primary">Submit</button>
         </form >
       </div>
     );

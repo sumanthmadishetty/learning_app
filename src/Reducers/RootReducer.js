@@ -1,10 +1,10 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
-import FormReducer from '../ReduxExample/FormReducer';
-import CounterReducer from '../Counter/CounterReducer';
+import FormReducer from '../Reducers/FormReducer';
+import CounterReducer from '../Reducers/CounterReducer';
 import thunk from 'redux-thunk';
 import { logger } from 'redux-logger';
-import Reducer from '../SagaExample/Reducer';
-import action from '../SagaExample/Home';
+import Reducer from '../Reducers/QuotesReducer';
+import action from '../Components/SagaExample/Home';
 import createSagaMiddleware from 'redux-saga';
 const sagaMiddleware = createSagaMiddleware();
 const RootReducer = combineReducers({

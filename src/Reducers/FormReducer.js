@@ -8,7 +8,7 @@ const FormReducer = (state = [], action) => {
       return state.map((data) => data.id === action.id ? { ...data, editing: !data.editing } : data)
     case 'UPDATE':
       return state.map((data) => {
-        if (data.id === action.id) {
+        if (data.id === action.data.id) {
           return {
             ...data,
             name: action.data.name,
@@ -18,7 +18,7 @@ const FormReducer = (state = [], action) => {
         } else return data;
       })
     case 'DATE':
-      return state.concat([action.date])
+      return state.concat([action.dates])
 
     default:
       return state;

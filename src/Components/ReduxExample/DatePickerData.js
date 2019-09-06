@@ -10,11 +10,9 @@ class DatePickerData extends Component {
   render() {
     return (
       <div>
-        {this.props.date.map((date, id) => (
-          <div key={id}>
-            <DatePickers />
-          </div>
-        ))}
+        <div key={this.props.date.id}>
+          <DatePickers date={this.props.date} />
+        </div>
       </div>
     );
   }

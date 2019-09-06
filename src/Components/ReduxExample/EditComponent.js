@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { upDate } from '../Actions/FormAction';
+import { bindActionCreators } from 'redux'
 class EditComponent extends Component {
 
   upDate = (e) => {
     e.preventDefault();
     const name = this.name.value;
     const email = this.email.value;
+    const id = this.props.post.id
     const data = {
-      name, email
+      name, email, id
     }
-    this.props.dispatch({
-      type: 'UPDATE',
-      id: this.props.post.id,
-      data: data
-    })
+    this.props.upDate(data)
+    // this.props.dispatch({
+    //   type: 'UPDATE',
+    //   id: this.props.post.id,
+    //   data: data
+    // })
   }
 
   render() {
@@ -30,4 +34,7 @@ class EditComponent extends Component {
     )
   }
 }
-export default connect()(EditComponent);
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ upDate }, dispatch);
+};
+export default connect(null, mapDispatchToProps)(EditComponent);

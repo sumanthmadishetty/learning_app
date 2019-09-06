@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UnMount from '../Components/UnMount';
 // import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 // import { Router, navigate, __esModule } from "@reach/router";
 // import Main from './Main';
@@ -56,34 +57,23 @@ class LifeCycleMethod extends Component {
 
   componentWillUnmount() {
     console.log("componentWillUnmount")
-    document.removeEventListener("click", this.closeMenu);
   }
 
-  closeMenu() {
 
-  }
 
   render() {
     console.log("Render")
-    if (this.state.mounted) {
-      return (
-        <div>{this.state.names},{this.state.author}
-          <br />
-          {/* <nav> <Router>
-            <Link to="/Main"><button onClick={() => this.closeMenu()}>UnMount</button></Link>
-            <Switch>
-              <Route exact path="/Main" component={Main} />
-            </Switch>
-          </Router>
-          </nav> */}
-          {/* <button onClick={() => { navigate('/Quotes', { state: {} }) }}>UnMount</button> */}
-        </div>
-      )
-    }
-    else {
-      return null
-    }
+    return (
+      <div>{this.state.names},{this.state.author}
+        {/* if()
+        {
+         return null;
+     } */}
+        return <UnMount />
+      </div>
+    )
   }
 }
+
 
 export default LifeCycleMethod;

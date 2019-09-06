@@ -10,7 +10,7 @@ var disabledDays = ["2019-07-28", "2019-08-01", "2019-08-02", "2019-08-7", "2019
 
 const mapStateToProps = (state) => {
   return {
-    date: state
+    date: state.FormReducer
   }
 }
 

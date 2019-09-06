@@ -8,12 +8,12 @@ class NewsItem extends Component {
           return (
             <div className="row col-sm-6 offset-sm-3" key={id}>
               <div >
-                <h5>{articles.quote}</h5>
+                {/* <h5>{articles.quote}</h5>*/}
                 <h6>{articles.author}</h6>
-                {/* <h2>{articles.title}</h2>
+                <h2>{articles.title}</h2>
                 <img src={articles.urlToImage} alt="" />
                 <h4>{articles.description}</h4>
-                <a href={articles.url} >READ MORE</a> */}
+                <a href={articles.url} >READ MORE</a>
               </div>
             </div>
           )

@@ -4,14 +4,12 @@ import Post from '../ReduxExample/Post';
 import EditComponent from '../ReduxExample/EditComponent';
 class FormData extends Component {
   render() {
-    debugger
-    console.log(this.props)
     return (
       <div>
         {
-          this.props.data.map((post) => (
-            <div key={post.id}>
-              {post.editing ? <EditComponent post={post} key={post.id} /> : <Post key={post.id} post={post} />}
+          this.props.data.map((post, id) => (
+            <div key={id}>
+              {post.editing ? <EditComponent post={post} /> : <Post post={post} />}
             </div>
           ))
         }

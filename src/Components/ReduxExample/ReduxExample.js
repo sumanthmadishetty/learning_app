@@ -9,7 +9,8 @@ class ReduxExample extends Component {
       <div>
         <Form />
         <FormData />
-        {/* <DatePickerData /> <DatePickerInput /> */}
+        {/* <DatePickerData />
+        <DatePickerInput /> */}
       </div>
     );
   }
