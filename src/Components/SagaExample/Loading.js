@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import RingLoader from 'react-spinners/RingLoader';
-var style = { paddingTop: '20%' }
+var style = { paddingTop: '19%' }
 class Loading extends Component {
   render() {
     return (
