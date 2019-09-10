@@ -8,7 +8,7 @@ class FormData extends Component {
       <div>
         {
           this.props.data.map((post, id) => (
-            <div key={id}>
+            <div className="text-primary" key={id}>
               {post.editing ? <EditComponent post={post} /> : <Post post={post} />}
             </div>
           ))

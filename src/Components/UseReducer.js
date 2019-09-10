@@ -5,8 +5,8 @@ function UseReducer() {
   }, 0);
   return (
     <div>
-      <div>sum is - {sum}</div>
-      <button onClick={() => setSum(1)}>
+      <div className="text-primary">sum is - {sum}</div>
+      <button className="text-primary" onClick={() => setSum(1)}>
         Add
     </button>
     </div>

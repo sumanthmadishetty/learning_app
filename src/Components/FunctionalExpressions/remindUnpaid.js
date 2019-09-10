@@ -44,7 +44,7 @@ class remindUnpaid extends Component {
     return (
       this.state.notpaid.map((e, i) => {
         return (
-          <div key={i}>
+          <div key={i} className="text-primary">
             {e.name}({e.id})
           </div>
         )
@@ -52,8 +52,8 @@ class remindUnpaid extends Component {
   }
   render() {
     return (
-      <div>
-        <button onClick={() => this.remindUnpaid()}>remindUnpaid</button>
+      <div className="text-primary">
+        <button className="text-primary" onClick={() => this.remindUnpaid()}>remindUnpaid</button>
         {this.notpaid()}
       </div>
     );

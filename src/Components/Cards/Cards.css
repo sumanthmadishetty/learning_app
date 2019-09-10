@@ -148,7 +148,7 @@
                 }
                 .cards2
                 {
-                     padding-top: 27%;
+                     padding-top: 24%;
                      padding-bottom: 3%;
                      background-size: cover; 
                      background-image: url('http://172.16.0.52:2020/static/media/box2.b9f75fc1.png');
@@ -158,14 +158,14 @@
                 {
                      background-size: cover; 
                      background-image: url('http://172.16.0.52:2020/static/media/box3.d5acdf8c.png');
-                     padding-top: 27%;
+                     padding-top: 24%;
                      padding-bottom: 3%;
                      }
                    .cards4 
                     { 
                        background-image: url('http://172.16.0.52:2020/static/media/box4.b8a88c48.png');
                        background-size: cover; 
-                       padding-top: 17%;
+                       padding-top: 14%;
                        padding-bottom: 5%;
                     }
             

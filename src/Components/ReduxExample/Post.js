@@ -28,9 +28,9 @@ class Post extends Component {
   render() {
     return (
       <div>
-        <h2>{this.props.post.name}</h2>
-        <p>{this.props.post.email}</p>
-        <button onClick={() => this.delete()} className="btn btn-primary">Delete</button> &nbsp;&nbsp;
+        <h2 className="text-primary">{this.props.post.name}</h2>
+        <p className="text-primary">{this.props.post.email}</p>
+        <button onClick={() => this.delete()} className="btn btn-primary" >Delete</button> &nbsp;&nbsp;
         <button onClick={() => this.edit()} className="btn btn-primary">Edit</button>
       </div >
     );

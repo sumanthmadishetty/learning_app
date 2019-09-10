@@ -7,7 +7,7 @@ class Context3 extends Component {
         <UserContext.Consumer>
           {
             user => {
-              return <div>Context value is-{user}</div>
+              return <div className="text-primary">Context value is-{user}</div>
             }
           }
         </UserContext.Consumer>

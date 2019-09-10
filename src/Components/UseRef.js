@@ -11,7 +11,7 @@ function UseRef() {
     <div>
       <h4>{`The component has been re-rendered ${JSON.stringify(counter)} times`}</h4>
       <input type="text" ref={counter}  ></input>
-      <button onClick={abcd}>Click</button>
+      <button onClick={abcd} >Click</button>
     </div>
   );
 

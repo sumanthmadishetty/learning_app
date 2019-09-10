@@ -6,8 +6,8 @@ class Loading extends Component {
   render() {
     return (
       this.props.loading ?
-        <div style={style} className="col-sm  offset-sm-6">
-          <RingLoader ></RingLoader> </div> : null
+        <div style={style} className="col-sm  offset-sm-6 text-primary" >
+          <RingLoader></RingLoader> </div> : null
     );
   }
 }

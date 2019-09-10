@@ -1,6 +1,6 @@
 import DatePicker from "react-datepicker";
 import React, { Component } from 'react';
-import '../ReduxExample/index.css';
+import './ReduxExample/index.css';
 import { connect } from 'react-redux';
 // import getDay from "date-fns/getDay";
 // import addDays from "date-fns/addDays";

@@ -9,10 +9,10 @@ class Cards extends Component {
     return (
       cardData.map(({ className, color, btn }, i) => {
         return (
-          <div style={style}>
+          <div style={style} key={i}>
             <CardBody key={i}>
               <CardTitle className={className} ><h4> Lorem ipsum dolor sit amet, adipis consectetur elit,</h4></CardTitle>
-              <CardText className={className}><h6>Some quick example text to build on the card title and make up the bulk of the card's content.</h6></CardText>
+              <CardText className={className}><p>Some quick example text to build on the card title and make up the bulk of the card's content.</p></CardText>
               <Button color={color} className={btn}>Book Now</Button>
             </CardBody>
           </div>

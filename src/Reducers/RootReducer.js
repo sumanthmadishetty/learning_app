@@ -1,6 +1,7 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux'
 import FormReducer from '../Reducers/FormReducer';
 import CounterReducer from '../Reducers/CounterReducer';
+import DateReducer from '../Reducers/DateReducer';
 import thunk from 'redux-thunk';
 import { logger } from 'redux-logger';
 import Reducer from '../Reducers/QuotesReducer';
@@ -9,7 +10,7 @@ import createSagaMiddleware from 'redux-saga';
 const sagaMiddleware = createSagaMiddleware();
 const RootReducer = combineReducers({
   FormReducer,
-  CounterReducer, Reducer
+  CounterReducer, Reducer, DateReducer
 })
 export function configureStore() {
   const Store = createStore(

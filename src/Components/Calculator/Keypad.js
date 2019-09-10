@@ -44,7 +44,7 @@ class Keypad extends Component {
   }
 
   rowData(row) {
-    return row.map(({ name }, i) => <td ><button style={styles} className="btn btn-dark btn-lg" name={name} onClick={this.submitData}>{name}</button> </td >
+    return row.map(({ name }, i) => <td key={i}><button style={styles} className="btn btn-dark btn-lg" name={name} onClick={this.submitData}>{name}</button> </td >
     )
   }
 

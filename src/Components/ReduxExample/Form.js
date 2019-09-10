@@ -27,7 +27,7 @@ class Form extends Component {
   render() {
     return (
       <div className="mt-5">
-        <h2>Form</h2>
+        <h2 className="text-primary">Form</h2>
         <form>
           <input type="text" ref={(input) => this.name = input} /><br /><br />
           <input type="text" ref={(input) => this.email = input} /><br /><br />

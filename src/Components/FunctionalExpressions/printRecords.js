@@ -37,7 +37,7 @@ class printRecords extends Component {
     return (
       this.state.id.map((e, i) => {
         return (
-          <div key={i}>
+          <div key={i} className="text-primary">
             {e.name}({e.id})
           </div>
         )
@@ -46,7 +46,7 @@ class printRecords extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.printRecords()}>printRecords</button>
+        <button className="text-primary" onClick={() => this.printRecords()}>printRecords</button>
         {this.id()}
       </div>
     );

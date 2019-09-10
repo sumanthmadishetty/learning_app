@@ -3,7 +3,7 @@ import { UserContext } from '../UseContext/UseContext.js';
 function UseContext2() {
   const user = useContext(UserContext)
   return (
-    <div>
+    <div className="text-primary">
       {user}
     </div>
   );

@@ -7,7 +7,7 @@ export default function UseEffect(props) {
       .then(data => setData(data));
   })
   return (
-    <div>
+    <div className="text-primary">
       {JSON.stringify(data)}</div>
   )
 }

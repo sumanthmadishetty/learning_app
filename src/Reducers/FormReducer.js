@@ -17,8 +17,6 @@ const FormReducer = (state = [], action) => {
           }
         } else return data;
       })
-    case 'DATE':
-      return state.concat([action.dates])
 
     default:
       return state;

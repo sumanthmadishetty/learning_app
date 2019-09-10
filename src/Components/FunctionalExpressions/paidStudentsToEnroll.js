@@ -42,7 +42,7 @@ class paidStudentsToEnroll extends Component {
     return (
       this.state.data.map((e, i) => {
         return (
-          <div key={i}>
+          <div key={i} className="text-primary">
             {e.name}({e.id})
           </div>
         )
@@ -51,7 +51,7 @@ class paidStudentsToEnroll extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.paidStudentsToEnroll()}>paidStudentsToEnroll</button>
+        <button className="text-primary" onClick={() => this.paidStudentsToEnroll()}>paidStudentsToEnroll</button>
         {this.data()}
       </div>
     );
