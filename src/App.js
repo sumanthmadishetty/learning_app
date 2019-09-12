@@ -1,7 +1,10 @@
 import React, { Component, lazy, Suspense } from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom'
 import './App.css';
-import { Nav, NavItem } from 'reactstrap';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 const useState = lazy(() => import('./Components/UseState.js'))
 const UseEffect = lazy(() => import('./Components/useEffect.js'))
 const Main = lazy(() => import('./Components/HackerNews/Main.js'))
@@ -16,16 +19,17 @@ const Card = lazy(() => import('./Components/Cards/Card'))
 const ReduxExample = lazy(() => import('./Components/ReduxExample/ReduxExample.js'))
 const Counter = lazy(() => import('./Components/Counter/Counter'))
 const RootSaga = lazy(() => import('./Components/SagaExample/RootSaga'))
-const RootMode = lazy(() => import('./Components/LightMode&DarkMode/RootMode'))
 const Root = lazy(() => import('./Components/LifecycleMethods/Root'))
 const ReduxDatePicker = lazy(() => import('./Components/ReduxDatePicker/ReduxDatePicker'))
+const LineBasedGrid = lazy(() => import('./Components/Grid/LineBasedGrid'))
+const pagination = lazy(() => import('./Components/Pagination'))
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      name: 'sai', checked: false,
-      theme: localStorage.getItem("theme")
+      checked: false,
+      theme: 'white'
     }
   }
 
@@ -51,87 +55,91 @@ class App extends Component {
         <header className="header">
           <Suspense fallback={<div>Loading...</div>}>
             <nav> <Router>
-              <Nav>
-                <NavItem>
-                  <Link to="/Calculator">Calculator</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
-                  <Link to="/datePickers">DatePicker</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                  <Nav className="mr-auto">
+                    <Nav.Link as={NavLink} to='/Calculator'>Calculator</Nav.Link>
+                    <Nav.Link as={NavLink} to="/datePickers">DatePicker</Nav.Link>
+                    <Nav.Link as={NavLink} to="/Main">HackerNews</Nav.Link>
+                    <Nav.Link as={NavLink} to="/FunctionExpressions">FunctionExpressions</Nav.Link>
+                    <Nav.Link as={NavLink} to="/Card">Cards</Nav.Link>
+                    <Nav.Link as={NavLink} to="/ReduxExample">ReduxCurdOparetions</Nav.Link>
+                    <Nav.Link as={NavLink} to="/RootSaga">Saga</Nav.Link>
+                    <Nav.Link as={NavLink} to="/Counter">Counter</Nav.Link>
+                    <Nav.Link as={NavLink} to="/Root">LifeCycleMethods</Nav.Link>
+                    <Nav.Link as={NavLink} to="/ReduxDatePicker">ReduxDatePicker</Nav.Link>
+                    <Nav.Link as={NavLink} to="/LineBasedGrid">Grid</Nav.Link>
+                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown" className="text-primary">
+                      <Nav.Link as={NavLink} to="/UseReducer" className="text-primary">UseReducerHook</Nav.Link>
+                      <Nav.Link as={NavLink} to="/useState" className="text-primary">useStateHook</Nav.Link>
+                      <Nav.Link as={NavLink} to="/UseEffect" className="text-primary" >UseEffectHook</Nav.Link>
+                      <Nav.Link as={NavLink} to="/ContextExample" className="text-primary" >Context</Nav.Link>
+                      <Nav.Link as={NavLink} to="/UseContext" className="text-primary">UseContextHook</Nav.Link>
+                      <Nav.Link as={NavLink} to="/Pagination" className="text-primary">Pagination</Nav.Link>
+                    </NavDropdown>
+                  </Nav>
+                </Navbar.Collapse>
+              </Navbar>
+              {/* <Link to="/datePickers">DatePicker</Link>&nbsp;&nbsp;
+               
                   <Link to="/Main">HackerNews</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/useState">useStateHook</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/UseEffect">UseEffectHook</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+             
                   <Link to="/ContextExample">Context</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+               
                   <Link to="/UseContext">UseContextHook</Link>&nbsp;&nbsp;
-              </NavItem>
-
-                <NavItem>
+               
                   <Link to="/UseReducer">UseReducerHook</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/FunctionExpressions">FunctionExpressions</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+             
                   <Link to="/Card">Cards</Link >&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/ReduxExample">Redux CurdOparetions</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/Counter">Counter</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+             
                   <Link to="/RootSaga">Saga</Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/RootMode"> LightMode&DarkMode </Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
+              
                   <Link to="/Root"> LifeCycleMethod </Link>&nbsp;&nbsp;
-              </NavItem>
-                <NavItem>
-                  <Link to="/ReduxDatePicker"> ReduxDatePicker </Link>&nbsp;&nbsp;
-              </NavItem>
-              </Nav>
+             
+                  <Link to="/ReduxDatePicker"> ReduxDatePicker </Link>&nbsp;&nbsp; */}
               <label className="switch">
                 <input type="checkbox" defaultChecked={this.state.checked} onClick={() => this.toggleChange()} className="ml-2" />
                 <span className="slider round" />
               </label>
               <Switch>
-                <Route path="/" component={Quotes} />
-                <Route path="/datePickers" component={datePickers} />
-                <Route path="/Main" component={Main} />
-                <Route path="/UseEffect" component={UseEffect} />
-                <Route path="/useState" component={useState} />
-                <Route path="/ContextExample" component={ContextExample} />
-                <Route path="/UseContext" component={UseContext} />
-                <Route path="/UseReducer" component={UseReducer} />
-                <Route path="/FunctionExpressions" component={FunctionExpressions} />
-                <Route path="/Card" component={Card} />
-                <Route path="/ReduxExample" component={ReduxExample} />
-                <Route path="/FormData" component={FormData} />
-                <Route path="/Counter" component={Counter} />
-                <Route path="/RootSaga" component={RootSaga} />
-                <Route path="/RootMode" component={RootMode} />
-                <Route path="/Calculator" component={Calculator} />
-                <Route path="/Root" component={Root} />
-                <Route path="/ReduxDatePicker" component={ReduxDatePicker} />
+                <Route exact path="/" component={Quotes} />
+                <Route exact path="/datePickers" component={datePickers} />
+                <Route exact path="/Main" component={Main} />
+                <Route exact path="/UseEffect" component={UseEffect} />
+                <Route exact path="/useState" component={useState} />
+                <Route exact path="/ContextExample" component={ContextExample} />
+                <Route exact path="/UseContext" component={UseContext} />
+                <Route exact path="/UseReducer" component={UseReducer} />
+                <Route exact path="/FunctionExpressions" component={FunctionExpressions} />
+                <Route exact path="/Card" component={Card} />
+                <Route exact path="/ReduxExample" component={ReduxExample} />
+                <Route exact path="/FormData" component={FormData} />
+                <Route exact path="/Counter" component={Counter} />
+                <Route exact path="/RootSaga" component={RootSaga} />
+                <Route exact path="/Calculator" component={Calculator} />
+                <Route exact path="/Root" component={Root} />
+                <Route exact path="/ReduxDatePicker" component={ReduxDatePicker} />
+                <Route exact path="/LineBasedGrid" component={LineBasedGrid} />
+                <Route exact path="/Pagination" component={pagination} />
               </Switch>
             </Router>
             </nav>
           </Suspense >
         </header>
       </div>
-
     )
   }
 }

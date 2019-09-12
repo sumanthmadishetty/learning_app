@@ -25,8 +25,6 @@ class paidStudentsToEnroll extends Component {
     var data = studentRecords.filter(paid => (paid.paid === true));
     data = [...new Set([...paid, ...data])];
     data.sort(function (a, b) {
-      console.log("aaaaaa", a)
-      console.log("bbbbbb", b)
       var nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase()
       if (nameA < nameB)
         return -1
