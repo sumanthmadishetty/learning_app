@@ -22,7 +22,8 @@ const RootSaga = lazy(() => import('./Components/SagaExample/RootSaga'))
 const Root = lazy(() => import('./Components/LifecycleMethods/Root'))
 const ReduxDatePicker = lazy(() => import('./Components/ReduxDatePicker/ReduxDatePicker'))
 const LineBasedGrid = lazy(() => import('./Components/Grid/LineBasedGrid'))
-const pagination = lazy(() => import('./Components/Pagination'))
+const Agentportal = lazy(() => import('./Components/AgentPortal/Agentportal'))
+const AnimatedButtons = lazy(() => import('./Components/AnimatedButtons /AnimatedButtons'))
 class App extends Component {
 
   constructor(props) {
@@ -70,13 +71,14 @@ class App extends Component {
                     <Nav.Link as={NavLink} to="/Root">LifeCycleMethods</Nav.Link>
                     <Nav.Link as={NavLink} to="/ReduxDatePicker">ReduxDatePicker</Nav.Link>
                     <Nav.Link as={NavLink} to="/LineBasedGrid">Grid</Nav.Link>
+                    <Nav.Link as={NavLink} to="/AnimatedButtons">AnimatedButtons</Nav.Link>
                     <NavDropdown title="Dropdown" id="collasible-nav-dropdown" className="text-primary">
                       <Nav.Link as={NavLink} to="/UseReducer" className="text-primary">UseReducerHook</Nav.Link>
                       <Nav.Link as={NavLink} to="/useState" className="text-primary">useStateHook</Nav.Link>
                       <Nav.Link as={NavLink} to="/UseEffect" className="text-primary" >UseEffectHook</Nav.Link>
                       <Nav.Link as={NavLink} to="/ContextExample" className="text-primary" >Context</Nav.Link>
                       <Nav.Link as={NavLink} to="/UseContext" className="text-primary">UseContextHook</Nav.Link>
-                      <Nav.Link as={NavLink} to="/Pagination" className="text-primary">Pagination</Nav.Link>
+                      <Nav.Link as={NavLink} to="/Agentportal" className="text-primary">Agentportal</Nav.Link>
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
@@ -133,7 +135,8 @@ class App extends Component {
                 <Route exact path="/Root" component={Root} />
                 <Route exact path="/ReduxDatePicker" component={ReduxDatePicker} />
                 <Route exact path="/LineBasedGrid" component={LineBasedGrid} />
-                <Route exact path="/Pagination" component={pagination} />
+                <Route exact path="/Agentportal" component={Agentportal} />
+                <Route exact path="/AnimatedButtons" component={AnimatedButtons} />
               </Switch>
             </Router>
             </nav>

@@ -30,7 +30,6 @@ class Keypad extends Component {
   outPut() {
     const { inputValues } = this.state
     var y = inputValues.reduce((total, value) => total + value)
-
     this.setState({
       // eslint-disable-next-line
       data: eval(y)

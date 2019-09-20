@@ -1,0 +1,45 @@
+.input {
+  display: inline-block;
+  position: relative;
+  border-radius: 30px;
+  padding: 0 10px 0 29px;
+  height: 34px;
+  width: 290px;
+  border-radius: 30px;
+  border: 1px #d6d4d4 solid;
+  overflow: hidden;
+  outline: none;
+}
+#filtersearch {
+  position: relative;
+  left: -35px;
+  top: 1px;
+  color: lightgray;
+  cursor: pointer;
+  width: 0;
+}
+.button {
+  border-radius: 30px;
+  border: 1px #d6d4d4 solid;
+  overflow: hidden;
+  background-color: rgb(21, 69, 133);
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+.heighttext {
+  height: 34px;
+  width: 170px;
+  border-radius: 30px;
+  border: 1px #d6d4d4 solid;
+  overflow: hidden;
+  padding: 0 10px 0 29px;
+  outline: none;
+}

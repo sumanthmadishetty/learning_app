@@ -1,0 +1,47 @@
+.button {
+  padding: 20px 35px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+}
+.button:hover {
+  background-color: rgb(21, 69, 133);
+}
+
+.button1 {
+  padding: 20px 35px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+}
+.button1:hover {
+  background-color: rgb(21, 69, 133);
+}
+
+.img {
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  padding: 30px 45px;
+}
+.img:hover {
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 rgb(6, 247, 22));
+  filter: opacity(0.5) drop-shadow(0 0 0 rgb(4, 247, 37));
+}
+.datalist {
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 5px;
+  height: 34px;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    #ddd;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+}
+.datalist::-webkit-calendar-picker-indicator {
+  display: none;
+}

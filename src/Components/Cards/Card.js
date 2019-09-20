@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../Cards/Cards.css';
-import { Card, CardText, CardBody, CardTitle, Button } from 'reactstrap';
+import { CardText, CardBody, CardTitle, Button } from 'reactstrap';
 var style = { paddingTop: '3%' }
 var cardData = [{ className: "text-light", color: "primary", btn: "btn" }]
 
